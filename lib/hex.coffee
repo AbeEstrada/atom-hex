@@ -11,7 +11,7 @@ module.exports =
       HexView ?= require './hex-view'
       new HexView(filePath: pathname)
 
-    atom.workspaceView.command 'hex:open', ->
+    atom.workspaceView.command 'hex:view', ->
       if atom.workspace.activePaneItem?
         uri = atom.workspace.activePaneItem.getUri()
         atom.workspaceView.open("hex://#{uri}")

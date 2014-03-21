@@ -4,7 +4,7 @@
     'submenu': [
       'label': 'Hex'
       'submenu': [
-        { 'label': 'View', 'command': 'hex:open' }
+        { 'label': 'View', 'command': 'hex:view' }
       ]
     ]
   }
@@ -12,4 +12,4 @@
 
 'context-menu':
   '.image-view':
-    'Hex View': 'hex:open'
+    'Hex View': 'hex:view'
