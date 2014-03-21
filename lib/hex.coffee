@@ -14,4 +14,4 @@ module.exports =
     atom.workspaceView.command 'hex:view', ->
       if atom.workspace.activePaneItem?
         uri = atom.workspace.activePaneItem.getUri()
-        atom.workspaceView.open("hex://#{uri}")
+        atom.workspaceView.open("hex://#{uri}") if uri
