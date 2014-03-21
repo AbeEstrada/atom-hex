@@ -1,6 +1,6 @@
 # Hex Viewer for [Atom](http://atom.io)
 
-View the hex dump of an image
+View the hex dump of a file
 
 ## Install
 
@@ -12,6 +12,6 @@ View the hex dump of an image
 
 ---
 
-Available as a context menu
+Available as a context menu on images
 
 ![menu](https://f.cloud.github.com/assets/7937/2480029/e0bb451e-b0ab-11e3-8193-ae3b1acff614.png)
