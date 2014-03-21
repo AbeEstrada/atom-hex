@@ -1,0 +1,15 @@
+{
+  "name": "hex",
+  "main": "./lib/hex",
+  "version": "0.0.0",
+  "description": "Hex Viewer",
+  "repository": "https://github.com/AbeEstrada/atom-hex",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "fs-plus": "2.x",
+    "entities": "^1.0.0"
+  }
+}

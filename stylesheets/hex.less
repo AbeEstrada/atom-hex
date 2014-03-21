@@ -1,0 +1,21 @@
+@import "ui-variables";
+
+.hex-view {
+  overflow: auto;
+}
+
+.hex-row {
+  overflow: hidden;
+  &:first-child {
+    margin: 0 0 10px 0;
+    .hex-column {
+      &:last-child { width: 395px; }
+    }
+  }
+  .hex-column {
+    float: left;
+    width: 395px;
+    &:first-child { width: 67px; }
+    &:last-child { width: 150px; }
+  }
+}
