@@ -20,7 +20,7 @@ module.exports = (buffer) ->
 
   i = 0
   while i < 16
-    s += " " + zero(i, 2)
+    s += " #{zero(i, 2)}"
     i++
 
   s += "</div></div>"
