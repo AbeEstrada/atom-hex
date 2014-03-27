@@ -4,18 +4,18 @@
   overflow: auto;
 }
 
-.hex-row {
+header {
+  clear: both;
+}
+.hex {
+  float: left;
+  width: 440px;
+  margin: 10px 0 0 0;
   overflow: hidden;
-  &:first-child {
-    margin: 0 0 10px 0;
-    .hex-column {
-      &:last-child { width: 395px; }
-    }
-  }
-  .hex-column {
-    float: left;
-    width: 395px;
-    &:first-child { width: 67px; }
-    &:last-child { width: 150px; }
-  }
+}
+.ascii {
+  float: left;
+  width: 150px;
+  margin: 10px 0 0 20px;
+  overflow: hidden;
 }
