@@ -20,7 +20,7 @@ class HexView extends ScrollView
       'font-size': atom.config.get('editor.fontSize')
 
   hexFile: (filePath) ->
-    stream = fs.createReadStream(filePath)
+    stream = fs.ReadStream(filePath)
     stream.on 'data', (chunk) =>
       @hex chunk
 
