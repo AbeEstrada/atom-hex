@@ -1,21 +1,25 @@
 @import "ui-variables";
 
-.hex-view {
+.panes .pane .item-views {
   overflow: auto;
+  .hex-view {
+    min-width: 100%;
+    padding-top: 0;
+    overflow: auto;
+  }
 }
 
 header {
+  padding-top: 10px;
   clear: both;
 }
 .hex {
   float: left;
-  width: 440px;
   margin: 10px 0 0 0;
   overflow: hidden;
 }
 .ascii {
   float: left;
-  width: 150px;
   margin: 10px 0 0 20px;
   overflow: hidden;
 }
