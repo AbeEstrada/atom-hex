@@ -15,7 +15,7 @@ module.exports =
     atom.workspaceView.command 'hex:view', ->
       if atom.workspace.activePaneItem?
         uri = atom.workspace.activePaneItem.getUri()
-        if fs.existsSync(uri)
-          atom.workspaceView.open("hex://#{uri}") if uri
+        if uri and fs.existsSync(uri)
+          atom.workspaceView.open("hex://#{uri}")
         else
           console.warn "File (#{uri}) does not exists"
