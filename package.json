@@ -1,7 +1,7 @@
 {
   "name": "hex",
   "main": "./lib/hex",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Hex Viewer",
   "repository": "https://github.com/AbeEstrada/atom-hex",
   "license": "MIT",
