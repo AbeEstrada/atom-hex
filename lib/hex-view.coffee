@@ -22,7 +22,7 @@ class HexView extends ScrollView
   hexFile: (filePath) ->
     stream = fs.ReadStream(filePath)
     stream.on 'data', (chunk) =>
-      @hex chunk
+      @hex chunk if @hexDump.is(':empty')
 
   getPath: -> @filePath
 
