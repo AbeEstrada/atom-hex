@@ -2,10 +2,8 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'Hex'
-      'submenu': [
-        { 'label': 'View', 'command': 'hex:view' }
-      ]
+      'label': 'Hex View',
+      'command': 'hex:view'
     ]
   }
 ]
