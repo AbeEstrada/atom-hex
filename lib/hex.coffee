@@ -3,6 +3,9 @@ fs = require 'fs-plus'
 HexView = null
 
 module.exports =
+  configDefaults:
+    bytesPerLine: 16
+    
   activate: ->
     atom.project.registerOpener (uriToOpen) ->
       {protocol, host, pathname} = url.parse(uriToOpen)
