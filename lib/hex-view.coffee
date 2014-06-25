@@ -34,8 +34,9 @@ class HexView extends ScrollView
   # https://github.com/gagle/node-hex
 
   hex: (buffer) =>
-    rows = Math.ceil(buffer.length / 16)
-    last = buffer.length % 16 or 16
+    bytesPerLine = atom.config.get('atom-hex.bytesPerLine')
+    rows = Math.ceil(buffer.length / bytesPerLine)
+    last = buffer.length % bytesPerLine or bytesPerLine
     offsetLength = buffer.length.toString(16).length
     offsetLength = 6 if offsetLength < 6
 
@@ -44,7 +45,7 @@ class HexView extends ScrollView
     ascii = ""
 
     i = 0
-    while i < 16
+    while i < bytesPerLine
       offset += " #{zero(i, 2)}"
       i++
 
@@ -55,7 +56,7 @@ class HexView extends ScrollView
 
     while i < rows
       hex += "#{zero(b, offsetLength)}:"
-      lastBytes = (if i is rows - 1 then last else 16)
+      lastBytes = (if i is rows - 1 then last else bytesPerLine)
 
       j = 0
       while j < lastBytes
