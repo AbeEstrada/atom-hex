@@ -1,7 +1,7 @@
 {
   "name": "hex",
   "main": "./lib/hex",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Hex Viewer",
   "repository": "https://github.com/AbeEstrada/atom-hex",
   "license": "MIT",
@@ -12,5 +12,7 @@
     "fs-plus": "2.x",
     "entities": "^1.0.0"
   },
-  "activationEvents": ["hex:view"]
+  "activationEvents": [
+    "hex:view"
+  ]
 }
