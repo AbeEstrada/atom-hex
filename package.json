@@ -11,8 +11,5 @@
   "dependencies": {
     "fs-plus": "2.x",
     "entities": "^1.0.0"
-  },
-  "activationEvents": [
-    "hex:view"
-  ]
+  }
 }
