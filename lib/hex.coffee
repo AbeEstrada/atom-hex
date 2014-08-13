@@ -1,16 +1,14 @@
-url = require 'url'
 fs = require 'fs-plus'
 HexView = null
 
 module.exports =
   configDefaults:
     bytesPerLine: 16
-    
+
   activate: ->
     atom.project.registerOpener (uriToOpen) ->
-      {protocol, host, pathname} = url.parse(uriToOpen)
-      pathname = decodeURI(pathname) if pathname
-      return unless protocol is 'hex:'
+      pathname = uriToOpen.replace('hex://', '')
+      return unless uriToOpen.substr(0, 4) is 'hex:'
 
       HexView ?= require './hex-view'
       new HexView(filePath: pathname)
