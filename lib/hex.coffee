@@ -6,7 +6,7 @@ module.exports =
     bytesPerLine: 16
 
   activate: ->
-    atom.project.registerOpener (uriToOpen) ->
+    atom.workspace.registerOpener (uriToOpen) ->
       pathname = uriToOpen.replace('hex://', '')
       return unless uriToOpen.substr(0, 4) is 'hex:'
 
