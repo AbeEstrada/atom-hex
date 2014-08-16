@@ -1,6 +1,6 @@
 path = require 'path'
 fs = require 'fs-plus'
-entities = require("entities")
+entities = require 'entities'
 {$, ScrollView} = require 'atom'
 
 module.exports =
@@ -15,7 +15,7 @@ class HexView extends ScrollView
   afterAttach: ->
     @hexFile(@filePath)
 
-    $('.hex-dump').css
+    @hexDump.css
       'font-family': atom.config.get('editor.fontFamily')
       'font-size': atom.config.get('editor.fontSize')
 
