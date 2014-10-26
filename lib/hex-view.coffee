@@ -1,7 +1,7 @@
+{$, ScrollView} = require 'atom'
 path = require 'path'
 fs = require 'fs-plus'
-entities = require 'entities'
-{$, ScrollView} = require 'atom'
+entities = null
 
 module.exports =
 class HexView extends ScrollView
@@ -13,6 +13,7 @@ class HexView extends ScrollView
     super
 
   afterAttach: ->
+    entities ?= require 'entities'
     @hexFile(@filePath)
 
     @hexDump.css
