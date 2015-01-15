@@ -8,7 +8,7 @@ module.exports =
 
   activate: ->
     atom.workspace.registerOpener @openUri
-    atom.workspaceView.command 'hex:view', => @createView()
+    atom.views.getView(atom.workspace).command 'hex:view', => @createView()
 
   deactivate: ->
     atom.workspace.unregisterOpener @openUri
@@ -24,6 +24,6 @@ module.exports =
     if atom.workspace.activePaneItem?
       uri = atom.workspace.activePaneItem.getUri()
       if uri and fs.existsSync(uri)
-        atom.workspaceView.open "hex://#{uri}"
+        atom.views.getView(atom.workspace).open "hex://#{uri}"
       else
         console.warn "File (#{uri}) does not exists"
