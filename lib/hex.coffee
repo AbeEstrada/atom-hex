@@ -1,29 +1,29 @@
 fs = require 'fs-plus'
+HexView = null
 
 module.exports =
   configDefaults:
     bytesPerLine: 16
 
-  HexView: null
-
   activate: ->
-    atom.workspace.registerOpener @openUri
-    atom.views.getView(atom.workspace).command 'hex:view', => @createView()
+    atom.commands.add 'atom-workspace', 'hex:view', => createView()
+    @openerDisposable = atom.workspace.addOpener(openURI)
 
   deactivate: ->
-    atom.workspace.unregisterOpener @openUri
+    @openerDisposable.dispose()
 
-  openUri: (uriToOpen) ->
-    pathname = uriToOpen.replace 'hex://', ''
-    return unless uriToOpen.substr(0, 4) is 'hex:'
+openURI = (uriToOpen) ->
+  pathname = uriToOpen.replace 'hex://', ''
+  return unless uriToOpen.substr(0, 4) is 'hex:'
 
-    @HexView ?= require './hex-view'
-    new HexView(filePath: pathname)
+  HexView ?= require './hex-view'
+  new HexView(filePath: pathname)
 
-  createView: ->
-    if atom.workspace.activePaneItem?
-      uri = atom.workspace.activePaneItem.getUri()
-      if uri and fs.existsSync(uri)
-        atom.views.getView(atom.workspace).open "hex://#{uri}"
-      else
-        console.warn "File (#{uri}) does not exists"
+createView = ->
+  paneItem = atom.workspaceView.getActivePaneItem()
+  if paneItem?
+    filePath = paneItem.file.path
+    if fs.isFileSync(filePath)
+      atom.workspace.open "hex://#{filePath}"
+    else
+      console.warn "File (#{filePath}) does not exists"
