@@ -1,6 +1,6 @@
 # Hex Viewer for [Atom](http://atom.io)
 
-View the hex dump of a file
+View the hex dump of any file
 
 ## Install
 
