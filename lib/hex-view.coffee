@@ -1,4 +1,4 @@
-{$, ScrollView} = require 'atom'
+{$, ScrollView} = require 'atom-space-pen-views'
 path = require 'path'
 fs = require 'fs-plus'
 entities = null
@@ -12,7 +12,7 @@ class HexView extends ScrollView
   initialize: ({@filePath}) =>
     super
 
-  afterAttach: ->
+  attached: ->
     entities ?= require 'entities'
     @hexFile(@filePath)
 
@@ -27,7 +27,7 @@ class HexView extends ScrollView
 
   getPath: -> @filePath
 
-  getUri: -> @filePath
+  getURI: -> @filePath
 
   getTitle: -> "#{path.basename(@getPath())} Hex"
 

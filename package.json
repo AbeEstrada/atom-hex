@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "fs-plus": "2.x",
-    "entities": "^1.0.0"
+    "entities": "^1.0.0",
+    "atom-space-pen-views": "^2.0.3"
   }
 }
