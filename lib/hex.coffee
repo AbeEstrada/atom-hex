@@ -21,9 +21,8 @@ openURI = (uriToOpen) ->
 
 createView = ->
   paneItem = atom.workspace.getActivePaneItem()
-  if paneItem?
-    filePath = paneItem.file.path
-    if fs.isFileSync(filePath)
-      atom.workspace.open "hex://#{filePath}"
-    else
-      console.warn "File (#{filePath}) does not exists"
+  filePath = paneItem.getPath()
+  if paneItem and fs.isFileSync(filePath)
+    atom.workspace.open "hex://#{filePath}"
+  else
+    console.warn "File (#{filePath}) does not exists"
