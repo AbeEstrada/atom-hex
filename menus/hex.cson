@@ -9,5 +9,9 @@
 ]
 
 'context-menu':
-  '.image-view':
-    'Hex View': 'hex:view'
+  '.image-view': [
+    {
+      'label': 'Hex View',
+      'command': 'hex:view',
+    }
+  ]
