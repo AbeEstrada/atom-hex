@@ -2,8 +2,11 @@ fs = require 'fs-plus'
 HexView = null
 
 module.exports =
-  configDefaults:
-    bytesPerLine: 16
+  config:
+    bytesPerLine:
+      type: 'integer'
+      default: 16
+      minimum: 1
 
   activate: ->
     atom.commands.add 'atom-workspace', 'hex:view', => createView()
