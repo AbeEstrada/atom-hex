@@ -1,4 +1,5 @@
 {$, ScrollView} = require 'atom-space-pen-views'
+{Disposable} = require 'atom'
 path = require 'path'
 fs = require 'fs-plus'
 entities = null
@@ -30,6 +31,13 @@ class HexView extends ScrollView
   getURI: -> @filePath
 
   getTitle: -> "#{path.basename(@getPath())} Hex"
+
+  # NOP to remove deprecation. This kind of sucks
+  onDidChangeTitle: ->
+    new Disposable()
+
+  onDidChangeModified: ->
+    new Disposable()
 
   # Based on "node-hex" by Gabriel Llamas
   # https://github.com/gagle/node-hex
