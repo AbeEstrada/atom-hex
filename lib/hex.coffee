@@ -24,7 +24,7 @@ openURI = (uriToOpen) ->
 
 createView = ->
   paneItem = atom.workspace.getActivePaneItem()
-  filePath = paneItem.getPath()
+  filePath = paneItem?.getPath()
   if paneItem and fs.isFileSync(filePath)
     atom.workspace.open "hex://#{filePath}"
   else
