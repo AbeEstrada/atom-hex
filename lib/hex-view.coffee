@@ -78,7 +78,9 @@ class HexView extends ScrollView
       j = 0
       while j < lastBytes
         v = buffer[b]
-        if (v > 31 and v < 127) or v > 159
+        if (v == 32)
+          ascii += "&nbsp;"
+        else if (v > 32 and v < 127) or v > 159
           ascii += entities.encodeHTML(String.fromCharCode(v))
         else
           ascii += "."
